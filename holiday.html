@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-image: url(https://www.freecodecamp.org/news/content/images/2021/06/w-qjCHPZbeXCQ-unsplash.jpg);
+    }
+    .innercontainer {
+      margin-left: 40%;
+      margin-top: 10%;
+    }
+    #sldate {
+      width: 200px;
+      border: none;
+      background-color: #ffb129;
+      outline: none;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    #btn {
+      padding: 10px;
+      margin-left: 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ffb129;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1 style="margin-left: 45%; color: #a2442e">Holiday Check</h1>
+      <div class="innercontainer">
+        <input type="date" name="" id="sldate" />
+        <button onclick="myfun()" id="btn">Check holiday</button>
+        <div style="margin-top: 40px">
+          <h1
+            id="niket"
+            style="color: rgb(29, 39, 9); margin-bottom: 10px"
+          ></h1>
+          <h1
+            id="niket1"
+            style="color: rgb(51, 12, 51); margin-bottom: 10px"
+          ></h1>
+          <h1 id="niket2" style="color: rgb(49, 49, 6)"></h1>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
