@@ -54,4 +54,48 @@
       </div>
     </div>
   </body>
+  <script>
+    function myfun() {
+      var date = document.getElementById("sldate").value;
+      if (date.length == 0) {
+        alert("Enter Date");
+      } else {
+        // document.getElementById("niket").innerHTML = date;
+        //console.log(date);
+        //gov.uk/bank-holidays.json
+        //https://www.gov.uk/bank-holidays.json
+        fetch("https://www.gov.uk/bank-holidays.json")
+          .then((res) => res.json())
+          .then((data) => {
+            // data.scotland.events.forEach((element) => {
+            //   //  console.log(element);
+            //   if (element.date == date) {
+            //     document.getElementById("niket").innerHTML = element.title;
+            //     break;
+            //   } else {
+            //     document.getElementById("niket").innerHTML = "Noholiday";
+            //   }
+            // })
+            // console.log(data);
+            var arr = data.scotland.events;
+
+            //  console.log(arr);
+            // console.log(arr.length);
+            for (var i = 0; i < arr.length; i++) {
+              if (arr[i].date == date) {
+                document.getElementById("niket").innerHTML = arr[i].title;
+                if (arr[i].bunting) {
+                  document.getElementById("niket1").innerHTML =
+                    "Winter Bunting";
+                }
+                document.getElementById("niket2").innerHTML = arr[i].notes;
+                break;
+              } else {
+                document.getElementById("niket").innerHTML = "No holiday";
+              }
+            }
+          });
+      }
+    }
+  </script>
 </html>
